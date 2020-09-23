@@ -1,19 +1,37 @@
-import React from 'react'
-
-import AppLayout from '../layouts/AppLayout'
-import Logo from '../components/Logo/Logo'
-import SEO from '../components/SEO/SEO'
+import React from 'react';
+import AppLayout from '../layouts/AppLayout';
+import SEO from '../components/SEO/SEO';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 
 const IndexPage = () => (
   <AppLayout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p className="border border-primary">Welcome to your new Gatsby site.</p>
-    <p className="border border-secondary">Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Logo />
-    </div>
+    <section className="jumbotron text-center bg-light">
+      <div className="container">
+        <h1 className="jumbotron-heading">React - TypeScript - Bootstrap</h1>
+        <p className="lead text-muted mt-5">
+          This is a sample app based on Gatsby, React, Typescript and Bootstrap.
+        </p>
+      </div>
+    </section>
+    <Container>
+      <Row>
+        <Col md={6} lg={4}>
+          <Card
+            style={{ cursor: 'pointer' }}
+            className="text-center shadow rounded bg-dark text-white"
+          >
+            <Card.Body>
+              <Card.Title>Pay Calculator</Card.Title>
+              <Card.Text className="text-muted">
+                Including allowances and penalty rates.
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
   </AppLayout>
-)
+);
 
-export default IndexPage
+export default IndexPage;

@@ -8,7 +8,7 @@ const Header = () => (
       <a href="#" className="navbar-brand d-flex align-items-center">
         <Logo />
         <strong className={`text-white font-weight-bold pl-3 ${styles.title}`}>
-          Labour Commission
+          Labour Commission App
         </strong>
       </a>
     </div>

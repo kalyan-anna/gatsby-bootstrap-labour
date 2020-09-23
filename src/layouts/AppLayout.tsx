@@ -7,9 +7,7 @@ const AppLayout = ({ children }) => {
   return (
     <div className={styles.root}>
       <Header />
-      <main className={styles.main}>
-        <div className="container">{children}</div>
-      </main>
+      <main className={styles.main}>{children}</main>
     </div>
   );
 };
