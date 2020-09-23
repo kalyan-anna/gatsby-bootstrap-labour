@@ -1,7 +1,8 @@
 import React from 'react';
 import AppLayout from '../layouts/AppLayout';
 import SEO from '../components/SEO/SEO';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import CalcThumbnail from '../components/CalcThumbnail/CalcThumbnail';
+import { Container, Row, Col } from 'react-bootstrap';
 
 const IndexPage = () => (
   <AppLayout>
@@ -14,20 +15,19 @@ const IndexPage = () => (
         </p>
       </div>
     </section>
-    <Container>
-      <Row>
-        <Col md={6} lg={4}>
-          <Card
-            style={{ cursor: 'pointer' }}
-            className="text-center shadow rounded bg-dark text-white"
-          >
-            <Card.Body>
-              <Card.Title>Pay Calculator</Card.Title>
-              <Card.Text className="text-muted">
-                Including allowances and penalty rates.
-              </Card.Text>
-            </Card.Body>
-          </Card>
+    <Container className="mt-5">
+      <Row className="justify-content-md-center">
+        <Col sm md={6} lg={4}>
+          <CalcThumbnail
+            title="Pay Calculator"
+            text="Including allowances and penalty rates."
+          />
+        </Col>
+        <Col sm md={6} lg={4} className="mt-3 mt-sm-0">
+          <CalcThumbnail
+            title="Shift Calculator"
+            text="Rates for your shift."
+          />
         </Col>
       </Row>
     </Container>
