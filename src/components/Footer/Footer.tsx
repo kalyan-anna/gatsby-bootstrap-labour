@@ -30,7 +30,8 @@ const Footer = () => {
       <div className="container pt-3 pt-md-0">
         <strong className="ml-3 ml-md-0">Stay up to date: </strong>
         <SocialMedia />
-        <Nav className="d-inline-flex float-right">
+        <div className="d-md-none border border-dark rounded my-2"></div>
+        <Nav className="d-flex flex-column d-md-inline-flex flex-md-row float-md-right">
           <Nav.Item>
             <Nav.Link className="text-light" href="/Contact">
               Contact
