@@ -23,7 +23,7 @@ const IndexPage = () => (
             text="Including allowances and penalty rates."
           />
         </Col>
-        <Col sm md={6} lg={4} className="mt-3 mt-sm-0">
+        <Col sm md={6} lg={4} className="my-5 mt-sm-0">
           <CalcThumbnail
             title="Shift Calculator"
             text="Rates for your shift."
