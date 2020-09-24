@@ -1,5 +1,6 @@
 import React, { useCallback, useState, useEffect } from 'react';
 import { Card } from 'react-bootstrap';
+import { motion } from 'framer-motion';
 
 type CalcThumbnailProps = {
   title: string;
@@ -8,15 +9,17 @@ type CalcThumbnailProps = {
 
 const CalcThumbnail: React.FC<CalcThumbnailProps> = ({ title, text }) => {
   return (
-    <Card
-      style={{ cursor: 'pointer', height: '150px' }}
-      className="text-center shadow rounded bg-dark text-white"
-    >
-      <Card.Body>
-        <Card.Title>{title}</Card.Title>
-        <Card.Text className="text-muted">{text}</Card.Text>
-      </Card.Body>
-    </Card>
+    <motion.div whileHover={{ scale: 1.1 }} transition={{ duration: 0.5 }}>
+      <Card
+        style={{ cursor: 'pointer', height: '150px' }}
+        className="text-center shadow rounded bg-dark text-white"
+      >
+        <Card.Body>
+          <Card.Title>{title}</Card.Title>
+          <Card.Text className="text-muted">{text}</Card.Text>
+        </Card.Body>
+      </Card>
+    </motion.div>
   );
 };
 
