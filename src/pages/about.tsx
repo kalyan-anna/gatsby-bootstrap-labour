@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import { AppLayout } from '../layouts';
 
-const About = () => (
+const AboutPage = () => (
   <AppLayout title="About">
     <Container className="mt-5">
       <h1 className="mb-3">About</h1>
@@ -22,4 +22,4 @@ const About = () => (
   </AppLayout>
 );
 
-export default About;
+export default AboutPage;

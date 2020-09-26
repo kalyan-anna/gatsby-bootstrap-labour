@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import { AppLayout } from '../layouts';
 
-const Contact = () => (
+const ContactPage = () => (
   <AppLayout title="Contact">
     <Container className="mt-5">
       <h1 className="mb-3">Contact</h1>
@@ -14,4 +14,4 @@ const Contact = () => (
   </AppLayout>
 );
 
-export default Contact;
+export default ContactPage;
