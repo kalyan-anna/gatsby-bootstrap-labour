@@ -1,11 +1,9 @@
 import React from 'react';
-import AppLayout from '../layouts/AppLayout';
-import SEO from '../components/SEO/SEO';
 import { Container } from 'react-bootstrap';
+import { AppLayout } from '../layouts';
 
 const About = () => (
-  <AppLayout>
-    <SEO title="Contact" />
+  <AppLayout title="About">
     <Container className="mt-5">
       <h1 className="mb-3">About</h1>
       <div>

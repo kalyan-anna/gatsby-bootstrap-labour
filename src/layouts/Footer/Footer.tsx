@@ -32,7 +32,7 @@ const SocialMedia: React.FC<SocialMediaProps> = ({ items }) => (
   </Nav>
 );
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <footer
       className={`bg-secondary text-white d-md-flex align-items-center ${styles.footer}`}
@@ -63,5 +63,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

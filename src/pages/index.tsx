@@ -1,12 +1,10 @@
 import React from 'react';
-import AppLayout from '../layouts/AppLayout';
-import SEO from '../components/SEO/SEO';
 import CalcThumbnail from '../components/CalcThumbnail/CalcThumbnail';
 import { Container, Row, Col } from 'react-bootstrap';
+import { AppLayout } from '../layouts';
 
 const IndexPage = () => (
-  <AppLayout>
-    <SEO title="Home" />
+  <AppLayout title="Home">
     <section className="jumbotron text-center bg-light">
       <div className="container">
         <h1 className="jumbotron-heading">React - TypeScript - Bootstrap</h1>
