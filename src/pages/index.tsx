@@ -1,7 +1,7 @@
 import React from 'react';
-import CalcThumbnail from '../components/CalcThumbnail/CalcThumbnail';
 import { Container, Row, Col } from 'react-bootstrap';
 import { AppLayout } from '../layouts';
+import { AppThumbnail } from '../ui-kit';
 
 const IndexPage = () => (
   <AppLayout title="Home">
@@ -16,16 +16,13 @@ const IndexPage = () => (
     <Container className="mt-5">
       <Row className="justify-content-md-center">
         <Col sm md={6} lg={4}>
-          <CalcThumbnail
+          <AppThumbnail
             title="Pay Calculator"
             text="Including allowances and penalty rates."
           />
         </Col>
         <Col sm md={6} lg={4} className="my-5 mt-sm-0">
-          <CalcThumbnail
-            title="Shift Calculator"
-            text="Rates for your shift."
-          />
+          <AppThumbnail title="Shift Calculator" text="Rates for your shift." />
         </Col>
       </Row>
     </Container>

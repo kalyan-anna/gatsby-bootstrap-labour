@@ -1,13 +1,13 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import React from 'react';
 import { Card } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 
-type CalcThumbnailProps = {
+type AppThumbnailProps = {
   title: string;
   text: string;
 };
 
-const CalcThumbnail: React.FC<CalcThumbnailProps> = ({ title, text }) => {
+export const AppThumbnail: React.FC<AppThumbnailProps> = ({ title, text }) => {
   return (
     <motion.div whileHover={{ scale: 1.1 }} transition={{ duration: 0.5 }}>
       <Card
@@ -22,5 +22,3 @@ const CalcThumbnail: React.FC<CalcThumbnailProps> = ({ title, text }) => {
     </motion.div>
   );
 };
-
-export default CalcThumbnail;
