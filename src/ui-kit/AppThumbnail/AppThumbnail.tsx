@@ -9,7 +9,7 @@ type AppThumbnailProps = {
 
 export const AppThumbnail: React.FC<AppThumbnailProps> = ({ title, text }) => {
   return (
-    <motion.div whileHover={{ scale: 1.1 }} transition={{ duration: 0.5 }}>
+    <motion.div whileHover={{ scale: 1.1 }} transition={{ duration: 0.3 }}>
       <Card
         style={{ cursor: 'pointer', height: '150px' }}
         className="text-center shadow rounded bg-dark text-white"

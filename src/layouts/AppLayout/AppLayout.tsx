@@ -1,6 +1,6 @@
 import React from 'react';
 import * as styles from './AppLayout.module.scss';
-import '../styles/global.scss';
+import '../../styles/global.scss';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
