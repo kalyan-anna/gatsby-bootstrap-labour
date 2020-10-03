@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Header.module.scss';
 import { Link } from 'gatsby';
-import { Logo } from '../../packages/ui-kit';
+import { Logo } from '@ui-components';
 
 export const Header = () => (
   <header className="bg-primary shadow" style={{ height: '70px' }}>

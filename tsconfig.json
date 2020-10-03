@@ -1,11 +1,15 @@
 {
   "include": ["./src/**/*"],
   "compilerOptions": {
+    "baseUrl": "./src",
     "target": "es5",
     "jsx": "react",
     "experimentalDecorators": false,
     "allowJs": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@ui-components": ["packages/ui-components/index.ts"]
+    }
   }
 }

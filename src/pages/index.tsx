@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { AppLayout } from '../layouts';
-import { AppThumbnail } from '../packages/ui-kit';
+import { AppThumbnail } from '../packages/ui-components';
 import { navigate } from 'gatsby';
 
 const IndexPage = () => {
