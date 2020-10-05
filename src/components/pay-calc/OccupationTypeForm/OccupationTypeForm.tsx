@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { Form, Button } from 'react-bootstrap';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Select } from '@ui-components';
+import { Select } from 'components/ui-components';
 
 const occupations = [
   {

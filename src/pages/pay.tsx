@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { AppLayout } from '../layouts';
-import { PayMain } from 'packages/pay-calc';
+import { PayMain } from 'components/pay-calc';
 
 const PayPage = () => {
   return (
