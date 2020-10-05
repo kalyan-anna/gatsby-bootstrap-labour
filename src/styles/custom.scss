@@ -3,4 +3,23 @@ $theme-colors: (
   'danger': #ff4136,
 );
 
+$enable-shadows: true;
+$enable-gradients: true;
+
 @import 'node_modules/bootstrap/scss/bootstrap';
+
+.h1 {
+  font-size: 1.7rem;
+  color: var(--secondary);
+  @include media-breakpoint-up(sm) {
+    font-size: 2rem;
+  }
+}
+
+.h2 {
+  font-size: 1.5rem;
+  color: var(--secondary);
+  @include media-breakpoint-up(sm) {
+    font-size: 1.7rem;
+  }
+}

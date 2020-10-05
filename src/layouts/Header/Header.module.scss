@@ -1,3 +1,10 @@
+@import '~bootstrap/scss/_functions.scss';
+@import '~bootstrap/scss/_variables.scss';
+@import '~bootstrap/scss/mixins/_breakpoints.scss';
+
 .title {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  @include media-breakpoint-up(sm) {
+    font-size: 1.5rem;
+  }
 }
