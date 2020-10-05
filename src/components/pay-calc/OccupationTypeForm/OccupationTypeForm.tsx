@@ -4,61 +4,8 @@ import { Form, Button } from 'react-bootstrap';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Select } from 'components/ui-components';
-
-const occupations = [
-  {
-    name: 'Waiter',
-    value: 'Waiter',
-  },
-  {
-    name: 'Paramedic',
-    value: 'Paramedic',
-  },
-  {
-    name: 'Dentist',
-    value: 'Dentist',
-  },
-  {
-    name: 'Nurse',
-    value: 'Nurse',
-  },
-  {
-    name: 'Doctor',
-    value: 'Doctor',
-  },
-  {
-    name: 'Electrician',
-    value: 'Electrician',
-  },
-  {
-    name: 'Software Engineer',
-    value: 'Software Engineer',
-  },
-  {
-    name: 'Reporter',
-    value: 'Reporter',
-  },
-  {
-    name: 'Construction worker',
-    value: 'Construction worker',
-  },
-  {
-    name: 'Photographer',
-    value: 'Photographer',
-  },
-  {
-    name: 'Gardener',
-    value: 'Gardener',
-  },
-  {
-    name: 'Architect',
-    value: 'Architect',
-  },
-  {
-    name: 'Housewife',
-    value: 'Housewife',
-  },
-];
+import { useSelector } from 'react-redux';
+import { refDataSelectors } from 'state/ref-data';
 
 const defaultValues: OccupationTypeInput = {
   occupationType: '',
@@ -73,6 +20,7 @@ const schema = yup.object().shape({
 });
 
 export const OccupationTypeForm = () => {
+  const occupationTypes = useSelector(refDataSelectors.occupationTypes);
   const { register, handleSubmit, errors } = useForm<OccupationTypeInput>({
     resolver: yupResolver(schema),
     defaultValues,
@@ -91,7 +39,7 @@ export const OccupationTypeForm = () => {
           label="Please select the job title from the list that best fits the
             occupation to help us find the awards that apply."
           ref={register({ required: true })}
-          options={occupations}
+          options={occupationTypes}
           error={errors.occupationType}
         />
         <Button variant="primary" type="submit">
