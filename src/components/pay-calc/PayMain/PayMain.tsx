@@ -11,9 +11,9 @@ export const PayMain = () => {
   }, []);
 
   return (
-    <section className="container">
+    <section className="container p-3 bg-light">
       <h1 className="mb-3 text-secondary h1">Pay Calculator</h1>
-      <p className="text-muted">
+      <p className="text-muted mb-5">
         The Pay Calculator calculates base pay rates, allowances and penalty
         rates (including overtime).
       </p>

@@ -3,9 +3,10 @@ import { useForm } from 'react-hook-form';
 import { Form, Button } from 'react-bootstrap';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Select } from 'components/ui-components';
-import { useSelector } from 'react-redux';
+import { Select, StepNavigation } from 'components/ui-components';
+import { useSelector, useDispatch } from 'react-redux';
 import { refDataSelectors } from 'state/ref-data';
+import { updateOccupationType } from 'state/pay-calc';
 
 const defaultValues: OccupationTypeInput = {
   occupationType: '',
@@ -25,13 +26,15 @@ export const OccupationTypeForm = () => {
     resolver: yupResolver(schema),
     defaultValues,
   });
+  const dispatch = useDispatch();
 
-  const onSubmit = (data: OccupationTypeInput) =>
-    console.log('submitted form data:', data);
+  const onSubmit = (data: OccupationTypeInput) => {
+    dispatch(updateOccupationType(data.occupationType));
+  };
 
   return (
     <div>
-      <h2 className="h2">What is your occupation?</h2>
+      <h2 className="h2 mb-3">What is your occupation?</h2>
 
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Select
@@ -42,9 +45,7 @@ export const OccupationTypeForm = () => {
           options={occupationTypes}
           error={errors.occupationType}
         />
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
+        <StepNavigation showStartAgain={false} showBack={false} />
       </Form>
     </div>
   );
