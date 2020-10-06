@@ -56,7 +56,7 @@ const getOccupationTypes = (): Promise<{ name: string; value: string }[]> => {
             value: 'Housewife',
           },
         ]),
-      2000
+      3000
     )
   );
 };

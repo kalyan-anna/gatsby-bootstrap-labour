@@ -19,8 +19,7 @@ const IndexPage = () => {
         <div className="container">
           <h1 className="jumbotron-heading">React - TypeScript - Bootstrap</h1>
           <p className="lead text-muted mt-5">
-            This is a sample app based on Gatsby, React, Typescript and
-            Bootstrap.
+            Responsive and Adaptive Design.
           </p>
         </div>
       </section>

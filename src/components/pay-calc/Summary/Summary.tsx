@@ -1,12 +1,17 @@
 import React from 'react';
 import { StepNavigation } from 'components/ui-components';
 import { Form, Row, Col } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
+import { payCalcSelectors } from 'state/pay-calc';
 
 interface SummaryProps {
   onStartAgain(): void;
 }
 
 export const Summary: React.FC<SummaryProps> = ({ onStartAgain }) => {
+  const hourlyPayRate = useSelector(payCalcSelectors.hourlyPayRate);
+  const isCalculating = useSelector(payCalcSelectors.isCalculating);
+
   return (
     <div>
       <h2 className="h2 mb-3">Your pay rates summary</h2>
@@ -16,7 +21,7 @@ export const Summary: React.FC<SummaryProps> = ({ onStartAgain }) => {
             Hourly pay rate:
           </Form.Label>
           <Col xs="4">
-            <Form.Control plaintext readOnly value="$26.55" />
+            <Form.Control plaintext readOnly value={hourlyPayRate} />
           </Col>
         </Form.Group>
       </Form>

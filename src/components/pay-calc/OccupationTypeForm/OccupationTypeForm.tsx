@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { Form } from 'react-bootstrap';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Select, StepNavigation } from 'components/ui-components';
+import { Select, StepNavigation, Spinner } from 'components/ui-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { refDataSelectors } from 'state/ref-data';
 import {
@@ -25,6 +25,7 @@ export const OccupationTypeForm: React.FC<OccupationTypeFormProps> = ({
 }) => {
   const occupationTypes = useSelector(refDataSelectors.occupationTypes);
   const occupationType = useSelector(payCalcSelectors.occupationType);
+  const isLoading = useSelector(refDataSelectors.isLoading);
 
   const { register, handleSubmit, errors } = useForm<OccupationType>({
     resolver: yupResolver(schema),
@@ -36,6 +37,10 @@ export const OccupationTypeForm: React.FC<OccupationTypeFormProps> = ({
     dispatch(occupationTypeUpdated(data.occupationType));
     onNext();
   };
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   return (
     <div>

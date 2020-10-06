@@ -23,8 +23,20 @@ const employmentType = createSelector(
   ({ employmentType }) => employmentType
 );
 
+const hourlyPayRate = createSelector(
+  getPayCalcState,
+  ({ hourlyPayRate }) => hourlyPayRate
+);
+
+const isCalculating = createSelector(
+  getPayCalcState,
+  ({ calculating }) => calculating
+);
+
 export const payCalcSelectors = {
   occupationType,
   categories,
   employmentType,
+  hourlyPayRate,
+  isCalculating,
 };
