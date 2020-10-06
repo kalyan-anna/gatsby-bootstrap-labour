@@ -26,6 +26,7 @@ export const Radio = React.forwardRef<any, RadioProps>(
             ref={ref}
             key={item.value}
             isInvalid={!!error}
+            value={item.value}
           />
         ))}
         <Form.Control.Feedback type="invalid">

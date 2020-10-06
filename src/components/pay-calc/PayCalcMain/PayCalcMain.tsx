@@ -4,9 +4,10 @@ import { useDispatch } from 'react-redux';
 import { loadOccupationRequest } from 'state/ref-data';
 import { CategoriesForm } from '../CategoriesForm/CategoriesForm';
 import { EmploymentTypeForm } from '../EmploymentTypeForm/EmploymentTypeForm';
+import { Summary } from '../Summary/Summary';
 import { startAgain } from 'state/pay-calc';
 
-export const PayMain = () => {
+export const PayCalcMain = () => {
   const dispatch = useDispatch();
   const [activeStep, setActiveStep] = useState(0);
 
@@ -19,6 +20,7 @@ export const PayMain = () => {
   };
 
   const handleStartAgain = () => {
+    dispatch(startAgain());
     setActiveStep(0);
   };
 
@@ -41,11 +43,15 @@ export const PayMain = () => {
       name: 'Employment',
       component: (
         <EmploymentTypeForm
-          onNext={() => {}}
+          onNext={handleNext}
           onBack={handleBack}
           onStartAgain={handleStartAgain}
         />
       ),
+    },
+    {
+      name: 'Summary',
+      component: <Summary onStartAgain={handleStartAgain} />,
     },
   ];
 

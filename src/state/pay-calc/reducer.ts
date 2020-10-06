@@ -2,11 +2,12 @@ import {
   PayCalcState,
   CATEGORIES_UPDATED,
   EMPLOYMENT_TYPE_UPDATED,
+  START_AGAIN,
 } from './types';
 import { createReducer } from '@reduxjs/toolkit';
 import { OCCUPATION_TYPE_UPDATED } from './types';
 
-const defaultValue: PayCalcState = {
+const defaultState: PayCalcState = {
   occupationType: '',
   trainee: false,
   apprentice: false,
@@ -14,7 +15,7 @@ const defaultValue: PayCalcState = {
   employmentType: '',
 };
 
-export const payCalcReducer = createReducer<PayCalcState>(defaultValue, {
+export const payCalcReducer = createReducer<PayCalcState>(defaultState, {
   [OCCUPATION_TYPE_UPDATED]: (state: PayCalcState, action) => {
     state.occupationType = action.payload;
     return state;
@@ -29,4 +30,5 @@ export const payCalcReducer = createReducer<PayCalcState>(defaultValue, {
     state.employmentType = action.payload;
     return state;
   },
+  [START_AGAIN]: () => defaultState,
 });

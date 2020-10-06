@@ -1,1 +1,1 @@
-export { PayMain } from './PayMain/PayMain';
+export { PayCalcMain } from './PayCalcMain/PayCalcMain';
