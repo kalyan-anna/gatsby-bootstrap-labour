@@ -3,7 +3,11 @@ import { Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { StepNavigation, YesNoRadio } from 'components/ui-components';
-import { payCalcSelectors, Categories, updateCategories } from 'state/pay-calc';
+import {
+  payCalcSelectors,
+  Categories,
+  categoriesUpdated,
+} from 'state/pay-calc';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 
@@ -33,7 +37,7 @@ export const CategoriesForm: React.FC<CategoriesFormProps> = ({
   });
 
   const onSubmit = (data: Categories) => {
-    dispatch(updateCategories(data));
+    dispatch(categoriesUpdated(data));
     onNext();
   };
 

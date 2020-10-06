@@ -25,11 +25,10 @@ export const Select = React.forwardRef<any, SelectProps>(
             </option>
           ))}
         </Form.Control>
-        {error && (
-          <Form.Control.Feedback type="invalid">
-            {error.message}
-          </Form.Control.Feedback>
-        )}
+
+        <Form.Control.Feedback type="invalid">
+          {error?.message}
+        </Form.Control.Feedback>
       </Form.Group>
     );
   }

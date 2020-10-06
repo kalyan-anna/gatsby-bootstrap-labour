@@ -1,15 +1,21 @@
 import { createAction } from '@reduxjs/toolkit';
 import {
-  UPDATE_OCCUPATION_TYPE,
+  OCCUPATION_TYPE_UPDATED,
   START_AGAIN,
   Categories,
-  UPDATE_CATEGORIES,
+  CATEGORIES_UPDATED,
+  EMPLOYMENT_TYPE_UPDATED,
+  EmploymentType,
 } from './types';
 
-export const updateOccupationType = createAction<string>(
-  UPDATE_OCCUPATION_TYPE
+export const occupationTypeUpdated = createAction<string>(
+  OCCUPATION_TYPE_UPDATED
 );
 
-export const updateCategories = createAction<Categories>(UPDATE_CATEGORIES);
+export const categoriesUpdated = createAction<Categories>(CATEGORIES_UPDATED);
 
 export const startAgain = createAction(START_AGAIN);
+
+export const employmentTypeUpdated = createAction<
+  EmploymentType['employmentType']
+>(EMPLOYMENT_TYPE_UPDATED);

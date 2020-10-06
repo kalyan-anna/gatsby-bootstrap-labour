@@ -1,13 +1,13 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Form, Button } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Select, StepNavigation } from 'components/ui-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { refDataSelectors } from 'state/ref-data';
 import {
-  updateOccupationType,
+  occupationTypeUpdated,
   OccupationType,
   payCalcSelectors,
 } from 'state/pay-calc';
@@ -33,7 +33,7 @@ export const OccupationTypeForm: React.FC<OccupationTypeFormProps> = ({
   const dispatch = useDispatch();
 
   const onSubmit = (data: OccupationType) => {
-    dispatch(updateOccupationType(data.occupationType));
+    dispatch(occupationTypeUpdated(data.occupationType));
     onNext();
   };
 

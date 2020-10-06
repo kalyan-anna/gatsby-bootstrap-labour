@@ -1,6 +1,7 @@
-export const UPDATE_OCCUPATION_TYPE = 'payCalc/UPDATE_OCCUPATION_TYPE';
+export const OCCUPATION_TYPE_UPDATED = 'payCalc/OCCUPATION_TYPE_UPDATED';
 export const START_AGAIN = 'payCalc/START_AGAIN';
-export const UPDATE_CATEGORIES = 'payCalc/UPDATE_CATEGORIES';
+export const CATEGORIES_UPDATED = 'payCalc/CATEGORIES_UPDATED';
+export const EMPLOYMENT_TYPE_UPDATED = 'payCalc/EMPLOYMENT_TYPE_UPDATED';
 
 export interface Categories {
   trainee: boolean;
@@ -12,4 +13,8 @@ export interface OccupationType {
   occupationType: string;
 }
 
-export type PayCalcState = OccupationType & Categories;
+export interface EmploymentType {
+  employmentType: 'Full-time' | 'Part-time' | 'Casual' | '';
+}
+
+export type PayCalcState = OccupationType & Categories & EmploymentType;

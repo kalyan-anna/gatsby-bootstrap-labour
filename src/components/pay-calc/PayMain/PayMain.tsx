@@ -3,6 +3,8 @@ import { OccupationTypeForm } from '../OccupationTypeForm/OccupationTypeForm';
 import { useDispatch } from 'react-redux';
 import { loadOccupationRequest } from 'state/ref-data';
 import { CategoriesForm } from '../CategoriesForm/CategoriesForm';
+import { EmploymentTypeForm } from '../EmploymentTypeForm/EmploymentTypeForm';
+import { startAgain } from 'state/pay-calc';
 
 export const PayMain = () => {
   const dispatch = useDispatch();
@@ -30,6 +32,16 @@ export const PayMain = () => {
       component: (
         <CategoriesForm
           onNext={handleNext}
+          onBack={handleBack}
+          onStartAgain={handleStartAgain}
+        />
+      ),
+    },
+    {
+      name: 'Employment',
+      component: (
+        <EmploymentTypeForm
+          onNext={() => {}}
           onBack={handleBack}
           onStartAgain={handleStartAgain}
         />

@@ -18,7 +18,13 @@ const categories = createSelector(
   })
 );
 
+const employmentType = createSelector(
+  getPayCalcState,
+  ({ employmentType }) => employmentType
+);
+
 export const payCalcSelectors = {
   occupationType,
   categories,
+  employmentType,
 };
