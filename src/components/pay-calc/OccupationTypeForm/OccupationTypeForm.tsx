@@ -6,30 +6,35 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { Select, StepNavigation } from 'components/ui-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { refDataSelectors } from 'state/ref-data';
-import { updateOccupationType } from 'state/pay-calc';
-
-const defaultValues: OccupationTypeInput = {
-  occupationType: '',
-};
-
-interface OccupationTypeInput {
-  occupationType: string;
-}
+import {
+  updateOccupationType,
+  OccupationType,
+  payCalcSelectors,
+} from 'state/pay-calc';
 
 const schema = yup.object().shape({
-  occupationType: yup.string().required(),
+  occupationType: yup.string().required('This is a required field.'),
 });
 
-export const OccupationTypeForm = () => {
+interface OccupationTypeFormProps {
+  onNext(): void;
+}
+
+export const OccupationTypeForm: React.FC<OccupationTypeFormProps> = ({
+  onNext,
+}) => {
   const occupationTypes = useSelector(refDataSelectors.occupationTypes);
-  const { register, handleSubmit, errors } = useForm<OccupationTypeInput>({
+  const occupationType = useSelector(payCalcSelectors.occupationType);
+
+  const { register, handleSubmit, errors } = useForm<OccupationType>({
     resolver: yupResolver(schema),
-    defaultValues,
+    defaultValues: { occupationType },
   });
   const dispatch = useDispatch();
 
-  const onSubmit = (data: OccupationTypeInput) => {
+  const onSubmit = (data: OccupationType) => {
     dispatch(updateOccupationType(data.occupationType));
+    onNext();
   };
 
   return (

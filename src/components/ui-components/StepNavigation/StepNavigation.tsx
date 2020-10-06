@@ -6,12 +6,16 @@ interface StepNavigationProps {
   showNext?: boolean;
   showBack?: boolean;
   showStartAgain?: boolean;
+  onBack?: () => void;
+  onStartAgain?: () => void;
 }
 
 export const StepNavigation: React.FC<StepNavigationProps> = ({
   showNext = true,
   showBack = true,
   showStartAgain = true,
+  onBack = () => {},
+  onStartAgain = () => {},
 }) => {
   return (
     <nav
@@ -20,13 +24,23 @@ export const StepNavigation: React.FC<StepNavigationProps> = ({
       aria-label="step"
     >
       <div>
-        <Button variant="secondary" type="button" hidden={!showBack}>
+        <Button
+          variant="secondary"
+          type="button"
+          hidden={!showBack}
+          onClick={onBack}
+        >
           Back
         </Button>
       </div>
 
       <div>
-        <Button variant="secondary" type="button" hidden={!showStartAgain}>
+        <Button
+          variant="secondary"
+          type="button"
+          hidden={!showStartAgain}
+          onClick={onStartAgain}
+        >
           Start again
         </Button>
       </div>
