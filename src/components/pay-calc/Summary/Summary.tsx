@@ -1,8 +1,8 @@
-import React from 'react';
-import { StepNavigation } from 'components/ui-components';
+import React, { useEffect } from 'react';
+import { StepNavigation, Spinner } from 'components/ui-components';
 import { Form, Row, Col } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
-import { payCalcSelectors } from 'state/pay-calc';
+import { useSelector, useDispatch } from 'react-redux';
+import { payCalcSelectors, calculatePayRequest } from 'state/pay-calc';
 
 interface SummaryProps {
   onStartAgain(): void;
@@ -11,6 +11,15 @@ interface SummaryProps {
 export const Summary: React.FC<SummaryProps> = ({ onStartAgain }) => {
   const hourlyPayRate = useSelector(payCalcSelectors.hourlyPayRate);
   const isCalculating = useSelector(payCalcSelectors.isCalculating);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(calculatePayRequest());
+  }, []);
+
+  if (isCalculating) {
+    return <Spinner />;
+  }
 
   return (
     <div>

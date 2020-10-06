@@ -3,6 +3,7 @@ import rootReducer from './rootReducer';
 import createSagaMiddleware from 'redux-saga';
 import { all } from 'redux-saga/effects';
 import { refDataSaga } from './ref-data';
+import { payCalcSaga } from './pay-calc';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -19,7 +20,7 @@ if (process.env.NODE_ENV === 'development' && module.hot) {
 }
 
 function* rootSaga() {
-  yield all([...refDataSaga]);
+  yield all([...refDataSaga, ...payCalcSaga]);
 }
 
 sagaMiddleware.run(rootSaga);

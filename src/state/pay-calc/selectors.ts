@@ -33,10 +33,22 @@ const isCalculating = createSelector(
   ({ calculating }) => calculating
 );
 
+const payInputs = createSelector(
+  getPayCalcState,
+  ({ occupationType, trainee, apprentice, supportedWage, employmentType }) => ({
+    occupationType,
+    trainee,
+    apprentice,
+    supportedWage,
+    employmentType,
+  })
+);
+
 export const payCalcSelectors = {
   occupationType,
   categories,
   employmentType,
   hourlyPayRate,
   isCalculating,
+  payInputs,
 };

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { OccupationTypeForm } from '../OccupationTypeForm/OccupationTypeForm';
-import { useDispatch } from 'react-redux';
-import { loadOccupationRequest } from 'state/ref-data';
+import { useDispatch, useSelector } from 'react-redux';
+import { loadOccupationRequest, refDataSelectors } from 'state/ref-data';
 import { CategoriesForm } from '../CategoriesForm/CategoriesForm';
 import { EmploymentTypeForm } from '../EmploymentTypeForm/EmploymentTypeForm';
 import { Summary } from '../Summary/Summary';
@@ -10,6 +10,13 @@ import { startAgain } from 'state/pay-calc';
 export const PayCalcMain = () => {
   const dispatch = useDispatch();
   const [activeStep, setActiveStep] = useState(0);
+  const occupationTypes = useSelector(refDataSelectors.occupationTypes);
+
+  useEffect(() => {
+    if (occupationTypes.length === 0) {
+      dispatch(loadOccupationRequest());
+    }
+  }, [occupationTypes.length]);
 
   const handleNext = () => {
     setActiveStep((prev) => ++prev);
@@ -54,10 +61,6 @@ export const PayCalcMain = () => {
       component: <Summary onStartAgain={handleStartAgain} />,
     },
   ];
-
-  useEffect(() => {
-    dispatch(loadOccupationRequest());
-  }, []);
 
   return (
     <section className="container p-3 bg-light">
