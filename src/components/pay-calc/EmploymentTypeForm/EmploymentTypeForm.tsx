@@ -10,6 +10,7 @@ import {
   EmploymentType,
   employmentTypeUpdated,
 } from 'state/pay-calc';
+import { motion } from 'framer-motion';
 
 const schema = yup.object().shape({
   employmentType: yup.string().required('This is a required field.'),
@@ -40,7 +41,7 @@ export const EmploymentTypeForm: React.FC<EmploymentTypeFormProps> = ({
   };
 
   return (
-    <div>
+    <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }}>
       <h2 className="h2 mb-3">Please answer the following:</h2>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Radio
@@ -65,6 +66,6 @@ export const EmploymentTypeForm: React.FC<EmploymentTypeFormProps> = ({
         />
         <StepNavigation onBack={onBack} onStartAgain={onStartAgain} />
       </Form>
-    </div>
+    </motion.div>
   );
 };

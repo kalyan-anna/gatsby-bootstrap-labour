@@ -3,6 +3,7 @@ import { StepNavigation, Spinner } from 'components/ui-components';
 import { Form, Row, Col } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { payCalcSelectors, calculatePayRequest } from 'state/pay-calc';
+import { motion } from 'framer-motion';
 
 interface SummaryProps {
   onStartAgain(): void;
@@ -22,7 +23,7 @@ export const Summary: React.FC<SummaryProps> = ({ onStartAgain }) => {
   }
 
   return (
-    <div>
+    <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }}>
       <h2 className="h2 mb-3">Your pay rates summary</h2>
       <Form>
         <Form.Group as={Row} controlId="hourlyRate">
@@ -39,6 +40,6 @@ export const Summary: React.FC<SummaryProps> = ({ onStartAgain }) => {
         showBack={false}
         showNext={false}
       />
-    </div>
+    </motion.div>
   );
 };

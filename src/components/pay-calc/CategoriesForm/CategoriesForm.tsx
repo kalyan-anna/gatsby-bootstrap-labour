@@ -10,6 +10,7 @@ import {
 } from 'state/pay-calc';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { motion } from 'framer-motion';
 
 const schema = yup.object().shape({
   trainee: yup.boolean().required('This is a required field.'),
@@ -42,7 +43,7 @@ export const CategoriesForm: React.FC<CategoriesFormProps> = ({
   };
 
   return (
-    <div>
+    <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }}>
       <h2 className="h2 mb-3">Do any of these apply to you?</h2>
 
       <Form onSubmit={handleSubmit(onSubmit)}>
@@ -81,6 +82,6 @@ export const CategoriesForm: React.FC<CategoriesFormProps> = ({
 
         <StepNavigation onBack={onBack} onStartAgain={onStartAgain} />
       </Form>
-    </div>
+    </motion.div>
   );
 };
