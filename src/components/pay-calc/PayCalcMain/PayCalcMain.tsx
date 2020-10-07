@@ -6,6 +6,7 @@ import { CategoriesForm } from '../CategoriesForm/CategoriesForm';
 import { EmploymentTypeForm } from '../EmploymentTypeForm/EmploymentTypeForm';
 import { Summary } from '../Summary/Summary';
 import { startAgain } from 'state/pay-calc';
+import { Stepper } from 'components/ui-components/Stepper/Stepper';
 
 export const PayCalcMain = () => {
   const dispatch = useDispatch();
@@ -69,6 +70,10 @@ export const PayCalcMain = () => {
         The Pay Calculator calculates base pay rates, allowances and penalty
         rates (including overtime).
       </p>
+      <Stepper
+        activeStep={activeStep}
+        steps={steps.map(({ name }) => ({ name }))}
+      />
       {steps[activeStep].component}
     </section>
   );
